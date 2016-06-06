@@ -1,0 +1,106 @@
+<style>
+  .container {
+    max-width: 400px;
+    background-color: black;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+  }
+  #first {
+    display: inline-block;
+  }
+  .container div {
+    background-color: white;
+    width: 100%;
+    display: inline-block;
+    display: none;
+  }
+  .container img {
+    width: 100%;
+    height: 500px;
+    overflow: auto;
+  }
+
+  button {
+    position: absolute;
+  }
+
+  .next {
+    right: 5px;
+  }
+
+  .prev {
+    left: 5px;
+  }
+</style>
+
+<section class="demo">
+  <button class="next">Next</button>
+  <button class="prev">Previous</button>
+  <div class="container">
+    <div id='first'>
+      <img src="https://placeimg.com/400/200/people"/>
+    </div>
+    <div>
+     <img src="https://placeimg.com/400/200/any"/>
+    </div>
+    <div>
+      <img src="https://placeimg.com/400/200/nature"/>
+    </div>
+    <div>
+      <img src="https://placeimg.com/400/200/architecture"/>
+    </div>
+    <div>
+      <img src="https://placeimg.com/400/200/animals"/>
+    </div>
+    <div>
+      <img src="https://placeimg.com/400/200/people"/>
+    </div>
+    <div>
+      <img src="https://placeimg.com/400/200/tech"/>
+    </div>
+  </div>
+</section>
+
+<div class="explanation">
+  Building a slideshow like pattern that can accurately cycle through a number of unknown divs, forwards and backwards. Trying to use as little code as possible. Leave a comment if you see a way to do it better!
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script>
+var currentIndex = 0,
+  items = $('.container div'),
+  itemAmt = items.length;
+
+function cycleItems() {
+  var item = $('.container div').eq(currentIndex);
+  items.hide();
+  item.css('display','inline-block');
+}
+
+var autoSlide = setInterval(function() {
+  currentIndex += 1;
+  if (currentIndex > itemAmt - 1) {
+    currentIndex = 0;
+  }
+  cycleItems();
+}, 3000);
+
+$('.next').click(function() {
+  clearInterval(autoSlide);
+  currentIndex += 1;
+  if (currentIndex > itemAmt - 1) {
+    currentIndex = 0;
+  }
+  cycleItems();
+});
+
+$('.prev').click(function() {
+  clearInterval(autoSlide);
+  currentIndex -= 1;
+  if (currentIndex < 0) {
+    currentIndex = itemAmt - 1;
+  }
+  cycleItems();
+});
+</script>

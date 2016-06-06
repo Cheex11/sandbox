@@ -1,0 +1,33 @@
+html,body { margin: 0; height: 100%; overflow: hidden; }
+.container, .outp {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  overflow-y: auto;
+
+  text-align: center;
+  padding: 32px 0;
+  font-family: sans-serif;
+  color: #888;
+  font-weight: 700;
+}
+.container {
+  left: 50%;
+  border-left: 1px dashed #ccc;
+}
+.container div {
+  position: relative;
+  height: 512px;
+  width: 90%;
+  margin: 0 5% 32px;
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,.1);
+  counter-increment: div;
+}
+.container div::before {
+  position: absolute;
+  left: 16px;
+  top: 16px;
+  content: "#"counter(div);
+}
