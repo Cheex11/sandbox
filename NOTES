@@ -1,0 +1,6 @@
+Center CSS:
+
+div {
+	width: 70%;
+	maring: 0 auto;
+}

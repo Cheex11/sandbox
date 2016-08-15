@@ -17,3 +17,22 @@
 @media (max-width: 480px) {
 
 }
+
+
+
+/* Media quires for a responsive layout */
+    /* For tablets & smart phones */
+    @media (max-width: 767px) {
+    }
+
+    /* For smartphones */
+    @media (max-width: 480px) {
+    }
+
+    /* For smaller displays like laptops */
+    @media (min-width: 768px) and (max-width: 979px) {
+    }
+
+    /* For larger displays */
+    @media (min-width: 1200px) {
+    }
