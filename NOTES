@@ -4,3 +4,8 @@ div {
 	width: 70%;
 	maring: 0 auto;
 }
+
+
+Inline only take on L & R values.  Will not get taller w/ padding.
+
+
