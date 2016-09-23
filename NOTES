@@ -9,3 +9,12 @@ div {
 Inline only take on L & R values.  Will not get taller w/ padding.
 
 
+
+Absolute
+
+Relative
+
+Positioning Context
+
+
+If no parent has relative positioning, browser viewport becomes positioning context.

@@ -1,0 +1,57 @@
+<html>
+
+<head>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+</head>
+
+<body>
+	<script>
+		"use strict";
+		var colors = ["red","blue","yellow","white","black"];
+
+		//Some basic methods
+		var item = _.first(colors);
+		var item = _.last(colors,2);
+		// Grabs all but the last
+		var item = _.initial(colors);
+		// Grabs all but the last 2 when using a param
+		var item = _.initial(colors, 2);
+		// Returns items after the second param (also works with tail and drop)
+		var item = _.rest(colors,2);
+
+
+
+
+		//COMPACT Remove Falsy values
+		var items = [2,"",true,false,0,null,"some value", undefined,NaN];
+		_.compact(itmes);
+			//This will return [2,true,"some value"].
+
+		//Flatten
+		var items2 = [["a","b","c"],[[1,2,3],[true,false]]];
+		_.flatten(items2);
+			//Returns single array
+		_.flatten(items2,true)
+			//Reduces by one level instead of flattening all
+
+		_.without(colors,"red","green")
+			//returns array without red & green
+
+		_.union(colors,['blue','brown','pink'],['orange','red']);
+			//returns a single array with no duplicates.
+
+		_.intersection(colors,['blue','black','pink'])
+			//Would reutnr ["blue","black"]
+			//Look for items that are in each array.
+
+		_.difference(colors, ['blue','yellow'])
+			//Return array that doesn't have blue or yellow
+
+
+
+
+	</script>
+</body>
+
+
+</html>

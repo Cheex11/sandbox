@@ -130,6 +130,13 @@ figcaption {
 	margin-bottom: 0;
 }
 
+.icon-location {
+	width: 35px;
+	position: absolute;
+	top: -15px;
+	left: -15px;
+}
+
 /* =================================
   Media Queries
 ==================================== */
